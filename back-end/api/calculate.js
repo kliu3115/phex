@@ -21,6 +21,7 @@ async function handler(req, res) {
     );
     if (!geminiRes.ok) {
       const errText = await geminiRes.text();
+      console.error('Gemini API returned error:', geminiRes.status, errText);
       return res.status(geminiRes.status).json({ error: errText });
     }
     const data = await geminiRes.json();
@@ -34,7 +35,7 @@ async function handler(req, res) {
       notes: parsed.notes || 'No notes',
     });
   } catch (err) {
-    console.error(err);
+    console.error('Gemini API call error:', err);
     res.status(500).json({ error: 'AI request failed' });
   }
 }
