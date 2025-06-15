@@ -1,5 +1,5 @@
-import pool from '../../api/db';
-import withCors from '../../utils/withCors';
+import pool from '../../db.js';
+import withCors from '../../utils/withCors.js';
 
 async function handler(req, res) {
   const result = await pool.query('SELECT current_database()');

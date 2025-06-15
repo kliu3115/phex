@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import pool from '../../api/db';
-import withCors from '../utils/withCors';
+import pool from '../db.js';
+import withCors from '../utils/withCors.js';
 
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();

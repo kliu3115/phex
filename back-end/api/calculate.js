@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
-import { optionalAuthenticateToken } from '../utils/auth';
-import rateLimit from '../utils/aiLimiter';
-import withCors from '../utils/withCors';
+import { optionalAuthenticateToken } from '../utils/auth.js';
+import rateLimit from '../utils/aiLimiter.js';
+import withCors from '../utils/withCors.js';
 
 async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
