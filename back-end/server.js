@@ -1,5 +1,5 @@
 import express from 'express';
-import pg from 'pg';
+import pg from './node_modules/@types/pg';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
