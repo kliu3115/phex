@@ -62,7 +62,7 @@ const History: React.FC = () => {
   const fetchHistory = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/history", {
+      const res = await fetch("/api/history/index", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch history");

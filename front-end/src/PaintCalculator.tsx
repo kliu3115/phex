@@ -67,7 +67,7 @@ export default function PaintCalculator() {
 
     try {
     await axios.post(
-      "/api/history",
+      "/api/history/index",
       {
         target_color: mix.desiredColor.hex,
         target_amount: parseFloat(mix.desiredColor.amount) || 0,

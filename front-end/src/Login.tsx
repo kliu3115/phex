@@ -23,7 +23,7 @@ export default function Login({ onLogin }: LoginProps) {
       const localHistory = localStorage.getItem("paintMixHistory");
       if (localHistory) {
         await axios.post(
-          "/api/saveHistory",
+          "/api/history/index",
           { history: JSON.parse(localHistory) },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -44,9 +44,7 @@ export default function Login({ onLogin }: LoginProps) {
       navigate("/");
     } catch (err: any) {
       console.error("Login error:", err.response?.data);
-
       const backendError = err.response?.data;
-
       if (typeof backendError === "string") {
         setMessage(backendError);
       } else if (backendError?.error) {
