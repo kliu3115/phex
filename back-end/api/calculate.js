@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { optionalAuthenticateToken } from '../utils/auth.js';
-import rateLimit from '../utils/aiLimiter.js';
+import aiLimiter from '../utils/aiLimiter.js';
 import withCors from '../utils/withCors.js';
 
 async function handler(req, res) {
@@ -40,4 +40,4 @@ async function handler(req, res) {
   }
 }
 
-export default withCors(optionalAuthenticateToken(rateLimit(handler)));
+export default withCors(optionalAuthenticateToken(aiLimiter(handler)));
