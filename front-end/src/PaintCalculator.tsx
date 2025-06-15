@@ -14,7 +14,7 @@ interface PaintMix {
   recommendedMix?: PaintColor[];
 }
 
-function getContrastColor(hex: string = "#000000") {
+{/*function getContrastColor(hex: string = "#000000") {
   if (!hex || typeof hex !== "string" || !hex.startsWith("#") || hex.length !== 7) {
     hex = "#000000"; // fallback to black
   }
@@ -24,7 +24,7 @@ function getContrastColor(hex: string = "#000000") {
   const b = parseInt(hex.slice(5, 7), 16);
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
   return brightness > 250 ? "#000" : "#fff"; // black text for light colors
-}
+}*/}
 
 function getBorderColor(hex: string = "#ffffff") {
   if (!hex || typeof hex !== "string" || !hex.startsWith("#") || hex.length !== 7) {
@@ -55,7 +55,7 @@ export default function PaintCalculator() {
     const stored = localStorage.getItem("paintMixHistory");
     return stored ? JSON.parse(stored) : [];
   });
-  const [hasCalculated, setHasCalculated] = useState(false);
+  //const [hasCalculated, setHasCalculated] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("paintMixHistory", JSON.stringify(history));
@@ -99,10 +99,10 @@ export default function PaintCalculator() {
     syncMixToServer(entryWithTimestamp);
   };
 
-  const clearHistory = () => setHistory([]);
+  //const clearHistory = () => setHistory([]);
 
 const handleCalculate = async () => {
-  setHasCalculated(true);
+  //setHasCalculated(true);
 
   if (availableColors.length === 0) {
     setResults("No available colors to mix.");

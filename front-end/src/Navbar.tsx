@@ -15,12 +15,12 @@ export default function Navbar({ onLogout }: NavbarProps) {
   useEffect(() => {
     setIsLoggedIn(!!localStorage.getItem("token"));
   }, [location]); 
-  const linkClasses = (path: string) =>
+  {/*const linkClasses = (path: string) =>
     `px-3 py-1 rounded-lg transition ${
       location.pathname === path
         ? "bg-blue-600 text-white"
         : "text-blue-600 hover:bg-blue-100"
-    }`;
+    }`;*/}
 
     const handleLogout = () => {
     const confirmed = window.confirm("Are you sure you want to logout?");
