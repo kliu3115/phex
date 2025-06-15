@@ -53,6 +53,7 @@ nav {
   padding: 1rem 1rem;
   font-family: system-ui, sans-serif;
   border-bottom: 0.5px solid #f0f0f0;
+  position: absolute;
 }
 
 /* your brand on the left */

@@ -186,7 +186,7 @@ if (axios.isAxiosError(err) && err.response?.status === 429) {
 
   return (
     <div className="paint-calculator">
-      <h1>Paint Calculator</h1>
+      <h1>Pigment Mixer</h1>
       {/* Available Colors Input */}
       <div className="mb-4">
         <label>Available Colors:</label> 

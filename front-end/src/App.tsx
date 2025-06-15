@@ -29,7 +29,7 @@ export default function App() {
         <p className="mt-2">
           Use the{" "}
           <Link to="/calculator" style={{color: "#2247cf", textDecoration: 'none'}}>
-            Paint Calculator
+            Pigment Mixer
           </Link>{" "}
           to begin mixing colors. View your past mixes in {" "}
           <Link to="/history" style={{color: "#2247cf", textDecoration: 'none'}}>
@@ -41,7 +41,7 @@ export default function App() {
         <p className="mt-2">
           Use the{" "}
           <Link to="/calculator" style={{color: "#2247cf", textDecoration: 'none'}}>
-            Paint Calculator
+            Pigment Mixer
           </Link>{" "}
           tab to begin mixing colors. {" "}
           <Link to="/login" style={{color: "#2247cf", textDecoration: 'none'}}>

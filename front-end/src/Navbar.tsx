@@ -38,7 +38,7 @@ export default function Navbar({ onLogout }: NavbarProps) {
         <Link to="/" className="navbar-brand">PHEX AI</Link>
         <div className="navbar-links">
           <Link className={isActive("/")} to="/">Home</Link>
-          <Link className={isActive("/calculator")} to="/calculator">Paint Calculator</Link>
+          <Link className={isActive("/calculator")} to="/calculator">Pigment Mixer</Link>
           <Link className={isActive("/history")} to="/history">History</Link>
           {isLoggedIn ? (
             <button onClick={handleLogout} className="logout-button">Logout</button>
