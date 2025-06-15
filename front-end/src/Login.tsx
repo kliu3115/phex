@@ -40,11 +40,22 @@ export default function Login({ onLogin }: LoginProps) {
       localStorage.setItem("token", res.data.token);
       setMessage("Login successful! Your history is syncing...");
       await syncHistoryToServer(res.data.token);
-      {/*setMessage("Login successful! You can now view your history.");*/}
       onLogin();
       navigate("/");
     } catch (err: any) {
-      setMessage(err.response?.data?.error || "Login failed.");
+      console.error("Login error:", err.response?.data);
+
+      const backendError = err.response?.data;
+
+      if (typeof backendError === "string") {
+        setMessage(backendError);
+      } else if (backendError?.error) {
+        setMessage(backendError.error);
+      } else if (backendError?.message) {
+        setMessage(backendError.message);
+      } else {
+        setMessage("Login failed.");
+      }
     }
   };
 
@@ -60,14 +71,19 @@ export default function Login({ onLogin }: LoginProps) {
       setRegisterEmail("");
       setRegisterPassword("");
     } catch (err: any) {
-      console.error("Registration error:", err);
+      console.error("Registration error:", err.response?.data);
 
-      const backendMessage =
-        err.response?.data?.error ||
-        err.response?.data?.message || // fallback if backend uses 'message'
-        (typeof err.response?.data === "string" ? err.response.data : null); // plain string fallback
+      const backendError = err.response?.data;
 
-      setRegisterMessage(backendMessage || "Registration failed.");
+      if (typeof backendError === "string") {
+        setRegisterMessage(backendError);
+      } else if (backendError?.error) {
+        setRegisterMessage(backendError.error);
+      } else if (backendError?.message) {
+        setRegisterMessage(backendError.message);
+      } else {
+        setRegisterMessage("Registration failed.");
+      }
     }
   };
 
